@@ -10,4 +10,7 @@ function getComputerChoice() {
     }
 }
 
-getComputerChoice();
+function getPlayerChoice() {
+    let choice = prompt('Type your selection here:');
+    console.log(choice);
+}
