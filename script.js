@@ -2,15 +2,24 @@ function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
     
     if (choice === 0) {
-        console.log('Rock');
+        return 'rock';
     } else if (choice === 1) {
-        console.log('Paper');
+        return 'paper';
     } else {
-        console.log('Scissors');
+        return 'scissors';
     }
 }
 
 function getPlayerChoice() {
     let choice = prompt('Type your selection here:');
-    console.log(choice);
+    return choice;
 }
+
+function playRound(humanChoice, computerChoice) {
+    console.log(`Player: ${humanChoice}\nComputer: ${computerChoice}`)
+}
+
+const humanChoice = getPlayerChoice();
+const computerChoice = getComputerChoice();
+
+playRound(humanChoice, computerChoice);
