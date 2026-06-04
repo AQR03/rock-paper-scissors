@@ -15,7 +15,10 @@ function getPlayerChoice() {
     return choice;
 }
 
-function playRound(humanChoice, computerChoice) {
+function playRound() {
+    const humanChoice = getPlayerChoice();
+    const computerChoice = getComputerChoice();
+    
     if (humanChoice === computerChoice) {
         console.log('It\'s a tie');
     } else if (
@@ -35,7 +38,11 @@ function playRound(humanChoice, computerChoice) {
 
 let playerScore = 0
 let computerScore = 0
-const humanChoice = getPlayerChoice();
-const computerChoice = getComputerChoice();
+let count = 0
+//const humanChoice = getPlayerChoice();
+//const computerChoice = getComputerChoice();
+const btn = document.getElementById('play')
 
-playRound(humanChoice, computerChoice);
+btn.addEventListener('click', playRound);
+
+
