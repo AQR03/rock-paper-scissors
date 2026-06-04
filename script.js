@@ -20,29 +20,28 @@ function playRound() {
     const computerChoice = getComputerChoice();
     
     if (humanChoice === computerChoice) {
-        console.log('It\'s a tie');
+        resultContainer.textContent = 'It\'s a tie!';
     } else if (
         humanChoice === 'rock' && computerChoice === 'scissors' ||
         humanChoice === 'paper' && computerChoice === 'rock' ||
         humanChoice === 'scissors' && computerChoice === 'paper'
     ) {
         playerScore++
-        console.log('Congrats you won!');
+        resultContainer.textContent = 'Congrats you won!';
     } else {
         computerScore++
-        console.log('Sorry you lost. Try again.');
+        resultContainer.textContent = 'Sorry you lost. Try again';
     }
-    console.log(`Player Score: ${playerScore}\nComputer Score: ${computerScore}`)
-    console.log(`Player: ${humanChoice}\nComputer: ${computerChoice}`)
+    scoresContainer.textContent = `Player Score: ${playerScore}\nComputer Score: ${computerScore}`;
+    choicesContainer.textContent = `Player: ${humanChoice}\nComputer: ${computerChoice}`;
 }
 
 let playerScore = 0
 let computerScore = 0
 let count = 0
-//const humanChoice = getPlayerChoice();
-//const computerChoice = getComputerChoice();
+const resultContainer = document.getElementById('results')
+const choicesContainer = document.getElementById('choices')
+const scoresContainer = document.getElementById('scores')
 const btn = document.getElementById('play')
 
 btn.addEventListener('click', playRound);
-
-
