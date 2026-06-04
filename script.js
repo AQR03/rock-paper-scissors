@@ -10,13 +10,12 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerChoice() {
-    let choice = prompt('Type your selection here:');
+function getPlayerChoice(choice) {
     return choice;
 }
 
-function playRound() {
-    const humanChoice = getPlayerChoice();
+function playRound(choice) {
+    const humanChoice = getPlayerChoice(choice);
     const computerChoice = getComputerChoice();
     
     if (humanChoice === computerChoice) {
@@ -43,5 +42,10 @@ const resultContainer = document.getElementById('results')
 const choicesContainer = document.getElementById('choices')
 const scoresContainer = document.getElementById('scores')
 const btn = document.getElementById('play')
+const rockBtn = document.getElementById('rock')
+const paperBtn = document.getElementById('paper')
+const scissorsBtn = document.getElementById('scissors')
 
-btn.addEventListener('click', playRound);
+rockBtn.addEventListener('click', () => playRound('rock'));
+paperBtn.addEventListener('click', () => playRound('paper'));
+scissorsBtn.addEventListener('click', () => playRound('scissors'));
