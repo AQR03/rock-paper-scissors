@@ -10,12 +10,7 @@ function getComputerChoice() {
     }
 }
 
-<<<<<<< HEAD
-function getPlayerChoice() {
-    let choice = prompt('Type rock, paper, or scissors:').toLowerCase();
-=======
 function getPlayerChoice(choice) {
->>>>>>> features
     return choice;
 }
 
