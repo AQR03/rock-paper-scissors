@@ -10,13 +10,17 @@ function getComputerChoice() {
     }
 }
 
+<<<<<<< HEAD
 function getPlayerChoice() {
     let choice = prompt('Type rock, paper, or scissors:').toLowerCase();
+=======
+function getPlayerChoice(choice) {
+>>>>>>> features
     return choice;
 }
 
-function playRound() {
-    const humanChoice = getPlayerChoice();
+function playRound(choice) {
+    const humanChoice = getPlayerChoice(choice);
     const computerChoice = getComputerChoice();
     
     if (humanChoice === computerChoice) {
@@ -43,5 +47,10 @@ const resultContainer = document.getElementById('results')
 const choicesContainer = document.getElementById('choices')
 const scoresContainer = document.getElementById('scores')
 const btn = document.getElementById('play')
+const rockBtn = document.getElementById('rock')
+const paperBtn = document.getElementById('paper')
+const scissorsBtn = document.getElementById('scissors')
 
-btn.addEventListener('click', playRound);
+rockBtn.addEventListener('click', () => playRound('rock'));
+paperBtn.addEventListener('click', () => playRound('paper'));
+scissorsBtn.addEventListener('click', () => playRound('scissors'));
